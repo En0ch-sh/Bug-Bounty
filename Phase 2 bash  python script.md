@@ -38,7 +38,7 @@ ffuf -u "https://FUZZ.$DOMAIN" -w /usr/share/wordlists/dirsearch.txt -o "$OUTDIR
 # Web Crawling
 katana -list "$OUTDIR/live_hosts.txt" -jc -kf all -o "$OUTDIR/crawled_urls.txt"
 # Parameter Discovery
-arjun -u "$OUTDIR/live_hosts.txt" -oJ "$OUTDIR/parameters.json"
+arjun -i "$OUTDIR/live_hosts.txt" -oJ "$OUTDIR/parameters.json"
 # Historical URLs
 waybackurls "$DOMAIN" > "$OUTDIR/historical_urls.txt"
 
